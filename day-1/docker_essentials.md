@@ -1,4 +1,4 @@
-# Essential Docker Commands — Learn These by Heart
+# Essential Docker Commands
 
 ## Build & Run
 
