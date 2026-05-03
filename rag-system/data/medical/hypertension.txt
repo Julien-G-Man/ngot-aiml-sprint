@@ -1,0 +1,9 @@
+Hypertension Management Protocol — Primary Care 
+Hypertension is defined as BP >= 140/90 mmHg on two separate occasions. 
+Stage 1 (140-159/90-99): lifestyle modification first. If no improvement in 3 
+months, start medication. 
+Stage 2 (>=160/100): immediate pharmacological treatment required. 
+First-line drugs: ACE inhibitors (Lisinopril), Calcium channel blockers 
+(Amlodipine), 
+Thiazide diuretics (Hydrochlorothiazide). 
+Target BP: < 130/80 mmHg for most adults. < 140/90 for elderly > 65 years.

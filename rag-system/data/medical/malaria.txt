@@ -1,0 +1,7 @@
+Malaria Diagnosis and Treatment Guidelines — Ghana Health Service 
+Malaria is caused by Plasmodium parasites. Symptoms: fever, chills, sweating, 
+headache. 
+Diagnosis: Blood smear microscopy (gold standard) or Rapid Diagnostic Test (RDT). 
+First-line treatment: Artemether-Lumefantrine (AL) for uncomplicated P. falciparum. 
+Severe malaria: IV Artesunate immediately. Admit to hospital. 
+Prevention: Insecticide-treated mosquito nets, indoor residual spraying.

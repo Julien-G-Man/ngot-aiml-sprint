@@ -9,8 +9,6 @@ from app.predictor import ETAPredictor
   
   
 # ── App Setup ────────────────────────────────────────────────────── 
-  
-# Create the FastAPI app with metadata for the auto-generated docs 
 app = FastAPI( 
     title="ETA Predictor API", 
     description=""" 
@@ -22,11 +20,10 @@ app = FastAPI(
     3. Use `/health` to check the service status 
     """, 
     version="1.0.0", 
-    docs_url="/docs",       # Interactive documentation at /docs 
-    redoc_url="/redoc",     # Alternative docs at /redoc 
+    docs_url="/docs",       # Interactive documentation  
+    redoc_url="/redoc",     # Alternative docs at 
 ) 
   
-# Allow requests from any origin (important for frontend apps) 
 app.add_middleware( 
     CORSMiddleware, 
     allow_origins=['*'], 

@@ -1,0 +1,7 @@
+Type 2 Diabetes Management Guidelines 
+Diagnosis: Fasting glucose >= 7.0 mmol/L or HbA1c >= 48 mmol/mol (6.5%). 
+First-line treatment: Metformin 500mg twice daily with meals, titrate to 2000mg/day. 
+If HbA1c not controlled after 3 months: add SGLT2 inhibitor or GLP-1 agonist. 
+Monitoring: HbA1c every 3 months initially, then every 6 months when stable. 
+Target: HbA1c < 7% (53 mmol/mol) for most patients. 
+Foot care, eye exams, and kidney function tests annually.
