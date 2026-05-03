@@ -1,0 +1,55 @@
+GHANA HEALTH SERVICE — MALARIA CASE MANAGEMENT GUIDELINES (2024) 
+  
+1. DISEASE OVERVIEW 
+Malaria is caused by Plasmodium parasites, primarily P. falciparum (most dangerous) 
+in Ghana. 
+Transmission is through bites of infected female Anopheles mosquitoes, primarily at 
+night. 
+Ghana has endemic malaria year-round, with peak transmission during rainy seasons 
+(April-June, September-November). 
+  
+2. CLINICAL PRESENTATION 
+Uncomplicated malaria: cyclical fever (38-40°C), chills, rigors, sweating, headache, 
+myalgia, nausea. 
+Severe malaria (P. falciparum): impaired consciousness, seizures, respiratory 
+distress, severe anaemia (Hb < 7g/dL), 
+hypoglycaemia, abnormal bleeding, jaundice, haemoglobinuria (blackwater urine). 
+  
+3. DIAGNOSIS 
+Microscopy: thick and thin blood smear — gold standard. Identifies species and 
+quantifies parasitaemia. 
+Rapid Diagnostic Test (RDT): detects HRP-2 antigen. Sensitivity > 95% for P. 
+falciparum. 
+PCR: highest sensitivity. Used for low-density parasitaemia and species confirmation 
+in research. 
+Do NOT treat clinically without a positive test result in non-endemic settings. 
+  
+4. TREATMENT — UNCOMPLICATED MALARIA 
+First-line: Artemether-Lumefantrine (AL) — Coartem® 
+Adult dosing (> 35kg): 4 tablets (80mg/480mg) at 0, 8, 24, 36, 48, 60 hours 
+CRITICAL: Take with fatty food or whole milk to enhance absorption by 16-fold. 
+Contraindications: first trimester pregnancy (use Quinine + Clindamycin instead). 
+  
+Second-line: Artesunate-Amodiaquine (ASAQ) 
+Dosing: once daily for 3 days. Weight-based dosing for children. 
+  
+5. TREATMENT — SEVERE MALARIA 
+IV Artesunate: 2.4 mg/kg IV at 0, 12, 24 hours, then once daily until oral therapy 
+tolerated. 
+If IV Artesunate unavailable: Quinine IV as alternative (higher toxicity). 
+Supportive care: glucose monitoring (risk of hypoglycaemia), IV fluids, 
+antipyretics. 
+Admit to hospital — do not manage severe malaria in outpatient settings. 
+  
+6. MALARIA IN PREGNANCY 
+Malaria in pregnancy increases risk of anaemia, preterm birth, and low birth weight. 
+First trimester: Quinine + Clindamycin (7 days). AL is avoided in T1. 
+Second and third trimester: AL is safe and recommended. 
+Intermittent Preventive Treatment (IPTp): Sulfadoxine-Pyrimethamine at every 
+antenatal visit from 13 weeks. 
+  
+7. PREVENTION 
+Long-lasting insecticidal nets (LLINs): universal coverage target. Use every night. 
+Indoor Residual Spraying (IRS): Approved insecticides sprayed on indoor walls. 
+Chemoprevention: IPTp for pregnant women, SMC for children 3-59 months in seasonal 
+areas.
