@@ -4,7 +4,7 @@ import os
 import time 
 from pathlib import Path 
 from dotenv import load_dotenv 
-from pinecone import Pinecone 
+from pinecone import Pinecone, ServerlessSpec
 from llama_index.core import ( 
     SimpleDirectoryReader, VectorStoreIndex, 
     Settings, StorageContext, 
@@ -34,6 +34,18 @@ Settings.node_parser = SentenceSplitter(
 # ── Connect to Pinecone ─────────────────────────────────────────── 
 pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY')) 
 index_name = os.getenv('PINECONE_INDEX_NAME', 'medical-literature') 
+
+pc.create_index(
+    name=index_name,
+    dimension=1536,
+    metric="cosine",
+    spec=ServerlessSpec(
+        cloud="aws",
+        region="us-east-1"
+    )
+)
+print(f"Index created: {index_name}")
+
 pinecone_index = pc.Index(index_name) 
   
 # Check current state 

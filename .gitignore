@@ -24,6 +24,7 @@ htmlcov/
 .pyre/
 .tox/
 .nox/
+files/
 
 # Build / packaging output
 build/
