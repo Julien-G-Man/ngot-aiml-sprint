@@ -1,0 +1,4 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = https://github.com/Julien-G-Man/10-Day-AI-ML-and-Agentic-Systems-Sprint/eta-predictor

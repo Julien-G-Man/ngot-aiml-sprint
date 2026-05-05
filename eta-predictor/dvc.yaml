@@ -1,0 +1,34 @@
+# This defines the 3-stage pipeline
+
+stages:
+
+  # Stage 1: Generate raw data
+  generate_data:
+    cmd: poetry run python scripts/generate_data.py
+    deps:                          # Files this stage READS
+      - scripts/generate_data.py   # If this script changes, re-run
+    outs:                          # Files this stage CREATES
+      - data/raw/logistics_eta.csv
+
+  # Stage 2: Preprocess data
+  preprocess:
+    cmd: poetry run python scripts/preprocess.py
+    deps:
+      - scripts/preprocess.py
+      - data/raw/logistics_eta.csv   # Depends on output of stage 1
+    outs:
+      - data/processed/train.csv
+      - data/processed/val.csv
+
+  # Stage 3: Train model
+  train:
+    cmd: poetry run python scripts/train.py
+    deps:
+      - scripts/train.py
+      - data/processed/train.csv   # Depends on output of stage 2
+      - data/processed/val.csv
+    outs:
+      - models/eta_model_latest.joblib
+    metrics:                       # Track these files as metrics
+      - metrics/scores.json:       # DVC can compare metrics across versions
+          cache: false             # Don't store in DVC cache (it's tiny)
