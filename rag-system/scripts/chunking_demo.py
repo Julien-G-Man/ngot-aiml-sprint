@@ -3,6 +3,9 @@
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core import Document
 
+print("\n====================================================================================================")
+print("Chunking script running...")
+print("====================================================================================================")
 
 sample_text = """
 Malaria is a life-threatening disease caused by Plasmodium parasites transmitted 

@@ -6,7 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 co = cohere.Client(api_key=os.getenv('COHERE_API_KEY')) 
-  
+
+print("\n====================================================================================================")
+print("Reranking script running...")
+print("====================================================================================================")
+
+
 # Our knowledge base
 DOCUMENTS = [ 
     'Artemether-Lumefantrine is first-line for P. falciparum malaria. Take with fatty food.', 

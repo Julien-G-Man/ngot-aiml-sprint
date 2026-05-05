@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
+print("\n====================================================================================================")
+print("Embeddings script running...")
+print("====================================================================================================")
 
 def embed(text: str) -> list[float]:
     """Convert text to a vector using OpenAI text-embedding-3-small.

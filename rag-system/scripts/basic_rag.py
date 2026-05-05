@@ -13,6 +13,10 @@ from llama_index.llms.openai import OpenAI as LlamaOpenAI
 
 load_dotenv()
 
+print("\n====================================================================================================")
+print("RAG script running...")
+print("====================================================================================================")
+
 # ── Step 1: Configure global LlamaIndex settings ────────────────── 
 # This sets the default LLM and embedding model for all operations 
 Settings.llm = LlamaOpenAI(

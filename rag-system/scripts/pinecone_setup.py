@@ -3,9 +3,11 @@ from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
 
 load_dotenv()
+print("\n====================================================================================================")
+print("Pinecone Setup script running...")
+print("====================================================================================================")
 
-pc = Pinecone(api_key=os.getenv("PINECONE_API_KE"))
-
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 # ── Create index for Project 3 (Medical Literature) ───────────── 
 MEDICAL_INDEX = "medical-literature"
@@ -22,7 +24,7 @@ if MEDICAL_INDEX not in existing:
         metric='cosine',      # cosine similarity — standard for text embeddings
         spec=ServerlessSpec(
             cloud='aws',
-            region='us-east-1',
+            region=os.getenv("PINECONE_ENVIRONMENT"),
         ),
     )
     print(f"Index created: {MEDICAL_INDEX}")
@@ -41,7 +43,7 @@ if PRODUCT_INDEX not in existing:
         metric='cosine',
         spec=ServerlessSpec(
             cloud='aws',
-            region='us-east-1'
+            region=os.getenv("PINECONE_ENVIRONMENT")
         )
     )
     print(f"Index created: {PRODUCT_INDEX}")

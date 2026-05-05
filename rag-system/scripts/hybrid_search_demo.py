@@ -9,6 +9,9 @@ from rank_bm25 import BM25Okapi
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+print("\n====================================================================================================")
+print("Hybrid Search script running...")
+print("====================================================================================================")
 
 # Sample medical knowledge base (in production, these would be document chunks) 
 KNOWLEDGE_BASE = [ 
