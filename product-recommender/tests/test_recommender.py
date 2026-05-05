@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 from unittest.mock import patch, MagicMock 
 from app.main import app 
 from app.schemas import RecommendResponse, ProductRecommendation 
-  
+
 client = TestClient(app) 
   
 MOCK_REC = ProductRecommendation( 
@@ -14,8 +14,8 @@ MOCK_RESPONSE = RecommendResponse(
     recommendations=[MOCK_REC], query='rainy day gear', 
     total_returned=1, model_used='text-embedding-3-small', 
 ) 
-  
-  
+
+
 class TestHealthEndpoint: 
     def test_health_returns_200(self): 
         assert client.get('/health').status_code == 200 

@@ -11,19 +11,24 @@ load_dotenv()
 openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY')) 
 pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY')) 
 index_name = os.getenv("PINECONE_INDEX_NAME", 'product-catalog')
+pinecone_env = os.getenv("PINECONE_ENVIRONMENT")
 
-pc.create_index(
-    name=index_name,
-    dimension=1536,
-    metric="cosine",
-    spec=ServerlessSpec(
-        cloud="aws",
-        region="us-east-1"
-    )
-)
+# pc.create_index(
+#     name=index_name,
+#     dimension=1536,
+#     metric="cosine",
+#     spec=ServerlessSpec(
+#         cloud="aws",
+#         region=pinecone_env
+#     )
+# )
 
 index = pc.Index(index_name) 
-  
+
+print("\n====================================================================================================")
+print("Index products script running...")
+print("====================================================================================================")
+
 # Load products 
 with open('data/products.json') as f: 
     products = json.load(f) 
