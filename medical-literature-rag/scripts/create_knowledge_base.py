@@ -1,7 +1,11 @@
 # Creates sample medical documents representing clinical guidelines 
   
 from pathlib import Path 
-  
+
+print("\n====================================================================================================")
+print("Create Knowledge Base script running...")
+print("====================================================================================================")
+
 DOCUMENTS = { 
     'malaria_guidelines.txt': """ 
 GHANA HEALTH SERVICE — MALARIA CASE MANAGEMENT GUIDELINES (2024) 

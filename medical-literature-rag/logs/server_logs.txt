@@ -1,0 +1,136 @@
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\run.py", line 75, in <module>
+    uvicorn.run(
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\main.py", line 617, in run
+    server.run()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\server.py", line 79, in serve
+    await self._serve(sockets)
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\server.py", line 86, in _serve
+    config.load()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\config.py", line 449, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\app\main.py", line 5, in <module>
+    from app.rag_engine import MedicalRAGEngine
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\app\rag_engine.py", line 16, in <module>
+    load_dotenv()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 429, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 101, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 84, in dict
+    resolve_variables(raw_values, override=self.override)
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 295, in resolve_variables
+    for name, value in values:
+                       ^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 93, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\main.py", line 33, in with_warn_for_invalid_lines
+    for mapping in mappings:
+                   ^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\parser.py", line 180, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\.venv\Lib\site-packages\dotenv\parser.py", line 71, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\run.py", line 75, in <module>
+    uvicorn.run(
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\main.py", line 617, in run
+    server.run()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\server.py", line 79, in serve
+    await self._serve(sockets)
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\server.py", line 86, in _serve
+    config.load()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\config.py", line 449, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\app\main.py", line 5, in <module>
+    from app.rag_engine import MedicalRAGEngine
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\medical-literature-rag\app\rag_engine.py", line 16, in <module>
+    load_dotenv()
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 429, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 101, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 84, in dict
+    resolve_variables(raw_values, override=self.override)
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 295, in resolve_variables
+    for name, value in values:
+                       ^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 93, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\main.py", line 33, in with_warn_for_invalid_lines
+    for mapping in mappings:
+                   ^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\parser.py", line 180, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\VSCode\NGOT-AIML-Sprint\.venv\Lib\site-packages\dotenv\parser.py", line 71, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+[32mINFO[0m:     Started server process [[36m63884[0m]
+[32mINFO[0m:     Waiting for application startup.
+2026-05-04 20:50:11,556 - ERROR - app.rag_engine - Failed to load RAG engine: You haven't specified an API key. Please either set the PINECONE_API_KEY environment variable or pass the 'api_key' keyword argument to the Pinecone client constructor.
+2026-05-04 20:50:11,558 - WARNING - root - RAG engine could not load — run scripts/ingest.py first
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:8000[0m (Press CTRL+C to quit)

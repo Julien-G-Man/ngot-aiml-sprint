@@ -16,6 +16,10 @@ from llama_index.llms.openai import OpenAI as LlamaOpenAI
   
 load_dotenv() 
   
+print("\n====================================================================================================")
+print("Ingest script running...")
+print("====================================================================================================")
+
 # ── Configure LlamaIndex ────────────────────────────────────────── 
 Settings.embed_model = OpenAIEmbedding( 
     model='text-embedding-3-small', 
@@ -34,6 +38,7 @@ Settings.node_parser = SentenceSplitter(
 # ── Connect to Pinecone ─────────────────────────────────────────── 
 pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY')) 
 index_name = os.getenv('PINECONE_INDEX_NAME', 'medical-literature') 
+pinecone_env = os.getenv("PINECONE_ENVIRONMENT")
 
 pc.create_index(
     name=index_name,
@@ -41,7 +46,7 @@ pc.create_index(
     metric="cosine",
     spec=ServerlessSpec(
         cloud="aws",
-        region="us-east-1"
+        region=pinecone_env
     )
 )
 print(f"Index created: {index_name}")
