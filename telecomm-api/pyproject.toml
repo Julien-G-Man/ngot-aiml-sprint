@@ -1,0 +1,29 @@
+[project]
+name = "telecomm-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Julien",email = "juliengmanana@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai (>=2.35.0,<3.0.0)",
+    "fastapi (>=0.136.1,<0.137.0)",
+    "uvicorn (>=0.46.0,<0.47.0)",
+    "pydantic (>=2.13.4,<3.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "telecomm_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
