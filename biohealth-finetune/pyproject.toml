@@ -1,0 +1,32 @@
+[project]
+name = "biohealth-finetune"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Julien",email = "juliengmanana@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "transformers (>=5.8.0,<6.0.0)",
+    "trl (>=1.3.0,<2.0.0)",
+    "peft (>=0.19.1,<0.20.0)",
+    "datasets (>=4.8.5,<5.0.0)",
+    "accelerate (>=1.13.0,<2.0.0)",
+    "sentencepiece (>=0.2.1,<0.3.0)",
+    "bitsandbytes (>=0.49.2,<0.50.0)",
+    "huggingface-hub (>=1.14.0,<2.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "biohealth_finetune", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)"
+]

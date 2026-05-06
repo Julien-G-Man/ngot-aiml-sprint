@@ -25,6 +25,8 @@ htmlcov/
 .tox/
 .nox/
 files/
+temp/
+tmp/
 
 # Build / packaging output
 build/
