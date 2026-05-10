@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/user/Desktop/VSCode/NGOT-AIML-Sprint/*/src/*/ -maxdepth 2 -name \"*.py\" -type f)"
+    ]
+  }
+}

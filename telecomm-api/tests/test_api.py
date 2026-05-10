@@ -25,8 +25,7 @@ def test_valid_complaint_returns_200(mock):
     assert r.json()['analysis']['account_at_risk'] is True
 
 def test_short_complaint_rejected():
-    r = client.post('/analyse', json={'complaint_text': 'bad', 'customer_id':
-'C001'})
+    r = client.post('/analyse', json={'complaint_text': 'bad', 'customer_id': 'C001'})
     assert r.status_code == 422
 
 def test_health_returns_ok():

@@ -28,12 +28,14 @@ def call_openai_with_rag(prompt, context, model=model, temperature=0.1):
         max_tokens=200,
         messages = [
             {"role": "user", "content": prompt},
-            {"role": "system", "content": 
-                f"""You are a very helpful medical AI. 
+            {"role": "system", "content":
+                f"""You are a very helpful medical AI.
                 Answer accurately and precisely.
-                \nContext from our document: {context}"""}
+                \nContext from our document:
+                {context}
+            """}
         ]
-    )    
+    )
     return rag_response
 
 
