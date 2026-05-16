@@ -9,15 +9,7 @@ import math
 # ── Request Schema (what the API receives) ───────────────────────── 
   
 class ETARequest(BaseModel): 
-    """ 
-10-Day Tech Giants Sprint  |  Day 1: ML/MLOps Foundations Page 35 of 71 
-Comprehensive Beginner-Friendly Manual  |  College of Engineering Innovation Centre  |  Hybrid Session 
-    Validated input for ETA prediction. 
-  
-    All fields are validated automatically when this object is created. 
-    Invalid data raises a ValidationError with clear error messages. 
-    """ 
-    # model_config controls Pydantic behaviour 
+    """Validated input for ETA prediction.""" 
     model_config = ConfigDict( 
         str_strip_whitespace=True,   # Strip spaces from strings automatically 
         extra='forbid',              # Reject any extra fields not defined here 

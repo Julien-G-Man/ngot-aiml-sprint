@@ -41,8 +41,6 @@ def load_and_prepare(csv_path: str):
     df = pd.read_csv(csv_path)
     print(f'Loaded {len(df)} rows from {csv_path}')
 
-    # Feature engineering — add derived columns
-    # Rush hour flag
     rush = list(range(7, 10)) + list(range(17, 20))
     df['is_rush_hour'] = df['hour_of_day'].isin(rush).astype(float)
 
@@ -81,7 +79,6 @@ def plot_feature_importance(model_pipeline, feature_names: list, save_path: str)
         return None   # Linear models don't have feature_importances_
 
     importances = regressor.feature_importances_
-    # Sort by importance (highest first)
     sorted_idx = np.argsort(importances)[::-1]
 
     fig, ax = plt.subplots(figsize=(9, 5))
@@ -92,7 +89,7 @@ def plot_feature_importance(model_pipeline, feature_names: list, save_path: str)
     )
     ax.set_xlabel('Feature Importance Score', fontsize=11)
     ax.set_title('Which features matter most for predicting ETA?', fontsize=12)
-    ax.invert_yaxis()   # Most important at top
+    ax.invert_yaxis()
     plt.tight_layout()
     plt.savefig(save_path, dpi=150, bbox_inches='tight')
     plt.close()

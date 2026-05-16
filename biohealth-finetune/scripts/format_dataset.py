@@ -10,7 +10,6 @@ Return ONLY the JSON object, no explanation.'''
 
 def format_example(doc: dict) -> dict:
     """Convert one BC5CDR document to instruction format."""
-    # Combine title and abstract into one text
     text_parts = []
     for passage in doc['passages']:
         for t in passage['text']:
@@ -18,7 +17,6 @@ def format_example(doc: dict) -> dict:
                 text_parts.append(t.strip())
     full_text = ' '.join(text_parts)
 
-    # Collect entities by type
     chemicals, diseases = [], []
     seen = set()
     for ent in doc['entities']:
@@ -50,7 +48,6 @@ val_formatted   = [format_example(doc) for doc in raw['validation']]
 train_ds = Dataset.from_list(train_formatted)
 val_ds   = Dataset.from_list(val_formatted)
 
-# Save to disk for reuse
 Path('data').mkdir(exist_ok=True)
 train_ds.save_to_disk('data/bc5cdr_train_formatted')
 val_ds.save_to_disk('data/bc5cdr_val_formatted')

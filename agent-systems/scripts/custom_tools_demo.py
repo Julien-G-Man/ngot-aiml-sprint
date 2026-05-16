@@ -25,7 +25,7 @@ def calculate_orbital_period(semi_major_axis_km: float) -> float:
     """
     mu = 398600.4418  # Earth's gravitational parameter km³/s²
     T_seconds = 2 * math.pi * math.sqrt(semi_major_axis_km**3 / mu)
-    return round(T_seconds / 60, 2)   # Convert to minutes
+    return round(T_seconds / 60, 2)
 
 
 # ── Pattern 2: StructuredTool with Pydantic input schema ─────
@@ -70,7 +70,6 @@ satellite_tool = StructuredTool.from_function(
 )
 
 
-# Test the tools
 print('Orbital period of ISS (alt ~420km):')
 print(calculate_orbital_period.invoke({'semi_major_axis_km': 6371 + 420}))
 

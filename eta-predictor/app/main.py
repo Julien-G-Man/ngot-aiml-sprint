@@ -70,21 +70,15 @@ async def predict_eta(request: ETARequest):
     Provide origin/destination GPS coordinates, cargo details, and departure time.
     Returns estimated delivery time in minutes plus a confidence interval.
     """
-    # Check model is available
     if not predictor.is_loaded:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail='Model not loaded. Check server logs.',
         )
-
     try:
-        # Convert the validated request to a feature vector
         features = request.to_feature_vector()
-
-        # Run prediction
         eta_min, ci_low, ci_high = predictor.predict(features)
 
-        # Format ETA as human-readable string
         hours   = int(eta_min // 60)
         minutes = int(eta_min % 60)
         hour_label = 'hour' if hours == 1 else 'hours'

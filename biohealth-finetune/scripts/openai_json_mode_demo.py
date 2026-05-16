@@ -29,11 +29,10 @@ Extract the following from medical text and return as JSON:
         temperature=0.0,
     )
     raw = response.choices[0].message.content
-    return json.loads(raw)  # Always safe — JSON mode guarantees valid JSON
+    return json.loads(raw)
 
 result = extract_with_json_mode(
     'Patient has ST-elevation MI, troponin 2.4, referred for urgent PCI'
 )
 
 print(result)
-# always returns a dict - never crashes on JSON parse

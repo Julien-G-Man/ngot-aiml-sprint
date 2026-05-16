@@ -17,8 +17,7 @@ print("\n=======================================================================
 print("RAG script running...")
 print("====================================================================================================")
 
-# ── Step 1: Configure global LlamaIndex settings ────────────────── 
-# This sets the default LLM and embedding model for all operations 
+# ── Step 1: Configure global LlamaIndex settings ──────────────────
 Settings.llm = LlamaOpenAI(
     model='gpt-4o-mini',
     api_key=os.getenv("OPENAI_API_KEY"),
@@ -94,14 +93,12 @@ print('Building index (embedding documents)...')
 index = VectorStoreIndex.from_documents(documents) 
 print('Index built!') 
   
-# ── Step 5: Create query engine and ask questions ───────────────── 
-# The query engine handles: embed query → retrieve chunks → generate answer 
+# ── Step 5: Create query engine and ask questions ─────────────────
 query_engine = index.as_query_engine( 
     similarity_top_k=3,       # Retrieve the 3 most similar chunks 
     response_mode='compact',  # Compact mode: fit all context in one LLM call 
 ) 
   
-# Test queries 
 test_queries = [ 
     'What is the first-line treatment for malaria in Ghana?', 
     'What BP level requires immediate medication?', 

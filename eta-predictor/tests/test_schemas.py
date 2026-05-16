@@ -13,12 +13,11 @@ class TestETARequestValid:
   
     def test_basic_valid_request(self): 
         """A request with all valid fields should not raise an error.""" 
-        req = ETARequest( 
-            origin_lat=5.6037,   origin_lon=-0.1870,  # Accra 
-            dest_lat=6.6885,     dest_lon=-1.6244,    # Kumasi 
-            cargo_weight_kg=500, hour_of_day=10, day_of_week=1, 
-        ) 
-        # No exception means it's valid 
+        req = ETARequest(
+            origin_lat=5.6037,   origin_lon=-0.1870,  # Accra
+            dest_lat=6.6885,     dest_lon=-1.6244,    # Kumasi
+            cargo_weight_kg=500, hour_of_day=10, day_of_week=1,
+        )
         assert req.cargo_weight_kg == 500 
         assert req.vehicle_type == 'truck'  # Default value 
         assert req.num_stops == 1            # Default value 
@@ -59,8 +58,7 @@ class TestETARequestValid:
             cargo_weight_kg=100, hour_of_day=10, day_of_week=2, 
         ) 
         features = req.to_feature_vector() 
-        assert len(features) == 10 
-        # All elements must be numbers 
+        assert len(features) == 10
         assert all(isinstance(f, float) for f in features) 
   
     def test_feature_vector_rush_hour_flag(self): 
@@ -92,9 +90,8 @@ class TestETARequestInvalid:
                 origin_lon=-0.2, dest_lat=6.7, dest_lon=-1.6, 
                 cargo_weight_kg=100, hour_of_day=10, day_of_week=1, 
             ) 
-        # Check the error mentions the right field 
-        assert 'origin_lat' in str(exc_info.value) 
-  
+        assert 'origin_lat' in str(exc_info.value)
+
     def test_negative_cargo_weight(self): 
         """Negative weight is impossible — must be rejected.""" 
         with pytest.raises(ValidationError): 

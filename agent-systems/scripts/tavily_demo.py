@@ -39,7 +39,6 @@ def crawl(url: str, instructions: str):
 
 search_query = "What are the key differences between GPT-4 and Claude 2?"
 search_results = search(search_query)
-# print(search_results)
 
 print('=== TAVILY SEARCH RESULTS ===')
 for r in search_results['results']:
@@ -61,7 +60,7 @@ query='How many Starlink satellites are in orbit in 2025?'
 answer = qna(query)
 
 print('=== DIRECT ANSWER ===')
-print(answer)   # A concise, synthesised answer
+print(answer)
 
 # ── Extract specific content from a URL ───────────────────────
 
@@ -81,4 +80,3 @@ for item in extracted['results'][:1]:
 crawl_url = "https://langchain-ai.github.io/langgraph/"
 instructions = "Find all pages on agents"
 crawl_result = crawl(crawl_url, instructions)
-# print(crawl_result)

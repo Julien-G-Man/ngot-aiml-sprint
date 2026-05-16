@@ -72,10 +72,6 @@ print(f'Urgent:      {result.urgent_referral}')
 print(f'Confidence:  {result.confidence_score:.0%}')
 print(f'Treatment:   {result.first_line_treatment}')
 
-# This is now a TYPED Pydantic object — not a string, not a dict
-# IDE autocomplete works, type checking works, Pydantic validation works
-
-
 def extract_with_retry(
     text: str,
     max_retries: int = 3,
@@ -97,7 +93,7 @@ CORRECTION NEEDED: Your previous output failed validation with these errors:
 Please ensure: - confidence_score is a float between 0.0 and 1.0 - severity is exactly one of: mild, moderate, severe, critical - urgent_referral is a boolean (true/false)
 '''
             print(f'Attempt {attempt+1} failed. Retrying with error feedback...')
-            time.sleep(0.5)   # Brief pause before retry
+            time.sleep(0.5)
 
     raise RuntimeError(f'Failed to extract clinical entities after {max_retries} attempts')
 

@@ -13,7 +13,6 @@ def preprocess(input_path: str, output_dir: str) -> None:
     print(f'Raw dataset: {df.shape[0]} rows, {df.shape[1]} columns')
 
     # ── Feature Engineering ──────────────────────────────────
-    # Rush hour flag
     rush = list(range(7, 10)) + list(range(17, 20))
     df['is_rush_hour'] = df['hour_of_day'].isin(rush).astype(float)
 

@@ -16,9 +16,8 @@ Return JSON: {"chemicals": [...], "diseases": [...]}'''
 def load_model(use_adapter: bool):
     bnb = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type='nf4',
                              bnb_4bit_compute_dtype=torch.bfloat16)
-    base = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, quantization_config=bnb, device_map='auto',
-token=os.getenv('HF_TOKEN'))
+    base = AutoModelForCausalLM.from_pretrained(MODEL_ID, quantization_config=bnb, device_map='auto',
+                                                token=os.getenv('HF_TOKEN'))
     if use_adapter:
         return PeftModel.from_pretrained(base, ADAPTER_DIR)
     return base

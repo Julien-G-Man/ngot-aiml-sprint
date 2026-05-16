@@ -13,7 +13,6 @@ pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 MEDICAL_INDEX = "medical-literature"
 EMBED_DIM = 1536   # text-embedding-3-small produces 1536-dimensional vectors 
 
-# Check if index already exists before creating
 existing = [idx.name for idx in pc.list_indexes()]
 
 if MEDICAL_INDEX not in existing: 

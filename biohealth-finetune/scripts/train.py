@@ -1,4 +1,3 @@
-# scripts/train.py
 # Full QLoRA fine-tuning — this is the main training script
 
 import os, torch
@@ -62,7 +61,6 @@ lora_config = LoraConfig(
 )
 model = get_peft_model(model, lora_config)
 
-# Print how many parameters we're actually training
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 total     = sum(p.numel() for p in model.parameters())
 print(f'Trainable: {trainable:,} / {total:,} ({100*trainable/total:.2f}%)')
@@ -89,7 +87,7 @@ training_args = TrainingArguments(
     # Learning rate
     learning_rate=LR,
     lr_scheduler_type='cosine',   # Cosine decay — standard for LLMs
-    warmup_ratio=0.05,            # 5% of steps for warmup
+    warmup_ratio=0.05,
 
     # Memory optimisation
     gradient_checkpointing=True,  # Trade compute for memory — REQUIRED for QLoRA
@@ -101,7 +99,7 @@ training_args = TrainingArguments(
     logging_steps=10,
     eval_strategy='epoch',
     save_strategy='epoch',
-    save_total_limit=2,           # Keep only the 2 best checkpoints
+    save_total_limit=2,
     load_best_model_at_end=True,
     metric_for_best_model='eval_loss',
     report_to='none',             # Disable W&B / MLflow for this sprint

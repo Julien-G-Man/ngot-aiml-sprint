@@ -1,4 +1,3 @@
-# app/shopper_tools.py  (add to agent-systems project)
 import os, json
 from langchain.tools import tool
 from tavily import TavilyClient

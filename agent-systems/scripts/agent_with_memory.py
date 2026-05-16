@@ -35,8 +35,6 @@ llm   = ChatOpenAI(model='gpt-4o-mini', temperature=0,
 api_key=os.getenv('OPENAI_API_KEY'))
 
 
-# Memory stores the conversation history
-# It will be included in every prompt the agent receives
 memory = ConversationBufferMemory(
     memory_key='chat_history',   # The variable name in the prompt template
     return_messages=True,
@@ -46,7 +44,6 @@ memory = ConversationBufferMemory(
 agent = create_agent(llm, tools, debug=True)
 
 
-# Helper: build messages list including memory (if present)
 def build_messages(user_text: str):
     mem_vars = memory.load_memory_variables({})
     chat = mem_vars.get('chat_history')
@@ -61,13 +58,11 @@ def build_messages(user_text: str):
     return messages
 
 
-# Run a few turns, saving assistant replies back to memory
 def run_turn(user_text: str):
     messages = build_messages(user_text)
     result = agent.invoke({'messages': messages})
     # The final assistant message is usually the last message
     assistant_msg = result['messages'][-1].content
-    # Save to memory so subsequent turns have context
     try:
         memory.save_context({'input': user_text}, {'output': assistant_msg})
     except Exception:

@@ -56,4 +56,3 @@ print('=== ZERO-SHOT OUTPUT ===')
 print(zero_shot(BIOMEDICAL_TEXT))
 print('\n=== FEW-SHOT OUTPUT ===')
 print(few_shot(BIOMEDICAL_TEXT))
-# Notice: few-shot output follows the JSON structure from examples

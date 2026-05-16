@@ -12,7 +12,6 @@ print("Reranking script running...")
 print("====================================================================================================")
 
 
-# Our knowledge base
 DOCUMENTS = [ 
     'Artemether-Lumefantrine is first-line for P. falciparum malaria. Take with fatty food.', 
     'AL therapy absorption improves significantly with co-administration of foodcontaining fat.', 
@@ -46,11 +45,7 @@ except Exception as e:
     print(e)
 
   
-print('\nAfter Cohere re-ranking (top 5):') 
-for i, r in enumerate(results.results): 
-    print(f'  [{i}] score={r.relevance_score:.4f}  doc_idx={r.index}') 
-    print(f'       "{DOCUMENTS[r.index][:90]}"') 
-  
-  
-# Expected: docs about 'fatty food' and 'absorption' should rank high 
-# because they are most relevant to 'improve effectiveness'
+print('\nAfter Cohere re-ranking (top 5):')
+for i, r in enumerate(results.results):
+    print(f'  [{i}] score={r.relevance_score:.4f}  doc_idx={r.index}')
+    print(f'       "{DOCUMENTS[r.index][:90]}"')

@@ -51,9 +51,8 @@ pc.create_index(
 )
 print(f"Index created: {index_name}")
 
-pinecone_index = pc.Index(index_name) 
-  
-# Check current state 
+pinecone_index = pc.Index(index_name)
+
 stats = pinecone_index.describe_index_stats() 
 print(f'Pinecone index: {index_name}') 
 print(f'Current vectors: {stats.total_vector_count}') 
@@ -84,7 +83,6 @@ index = VectorStoreIndex.from_documents(
     show_progress=True,   # Shows a progress bar 
 ) 
   
-# Verify the ingestion 
 stats_after = pinecone_index.describe_index_stats()
 print(f'Vectors stored: {stats_after.total_vector_count}') 
 print(f'Documents: {len(documents)}') 

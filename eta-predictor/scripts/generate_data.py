@@ -44,13 +44,11 @@ def generate_logistics_dataset(n_samples: int = 6000, seed: int = 42) -> pd.Data
     LAT_MIN, LAT_MAX = 4.7, 11.2 
     LON_MIN, LON_MAX = -3.3, 1.2 
   
-    # Generate random coordinates 
     origin_lat = rng.uniform(LAT_MIN, LAT_MAX, n_samples) 
     origin_lon = rng.uniform(LON_MIN, LON_MAX, n_samples) 
     dest_lat   = rng.uniform(LAT_MIN, LAT_MAX, n_samples) 
-    dest_lon   = rng.uniform(LON_MIN, LON_MAX, n_samples) 
-  
-    # Generate feature values with realistic distributions 
+    dest_lon   = rng.uniform(LON_MIN, LON_MAX, n_samples)
+
     cargo_weight_kg = rng.exponential(scale=600, size=n_samples).clip(10, 20000) 
     hour_of_day     = rng.integers(0, 24, n_samples) 
     day_of_week     = rng.integers(0, 7, n_samples) 
@@ -63,15 +61,12 @@ def generate_logistics_dataset(n_samples: int = 6000, seed: int = 42) -> pd.Data
         haversine_distance(origin_lat[i], origin_lon[i], dest_lat[i], dest_lon[i]) 
         for i in range(n_samples) 
     ] 
-    distances = np.array(distances) 
-  
-    # Calculate ETA with realistic formula: 
-    # Trucks travel ~60 km/h on average in Ghana 
-    base_speed_kmh = 60.0 
-    # Distance/speed = hours, * 60 = minutes 
+    distances = np.array(distances)
+
+    # Calculate ETA with realistic formula: Trucks travel ~60 km/h on average in Ghana
+    base_speed_kmh = 60.0
     travel_time = (distances / base_speed_kmh) * 60 
   
-    # Traffic slows travel down 
     traffic_penalty = travel_time * (traffic_index - 1.0) 
   
     # Each stop adds 15-40 minutes 
@@ -88,7 +83,6 @@ def generate_logistics_dataset(n_samples: int = 6000, seed: int = 42) -> pd.Data
     # Random noise (weather, unexpected delays, driver behaviour) 
     noise = rng.normal(0, 12, n_samples) 
   
-    # Total ETA 
     eta_minutes = (travel_time + traffic_penalty + stop_time + 
                    rush_penalty + weight_penalty + noise).clip(5, 2000) 
   

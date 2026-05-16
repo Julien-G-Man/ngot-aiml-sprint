@@ -1,5 +1,3 @@
-# Handles loading and using the trained ML model 
-  
 import joblib 
 import numpy as np 
 from pathlib import Path 

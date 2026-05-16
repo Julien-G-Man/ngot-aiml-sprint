@@ -35,9 +35,9 @@ class ETARequest(BaseModel):
         """Motorcycles can carry at most 100kg.""" 
         # Note: at this point we can't access other fields easily in field_validator 
         # For cross-field validation, use model_validator (see below) 
-        if v <= 0: 
-            raise ValueError('Cargo weight must be positive') 
-        return round(v, 2)   # Round to 2 decimal places 
+        if v <= 0:
+            raise ValueError('Cargo weight must be positive')
+        return round(v, 2) 
   
     # @model_validator runs AFTER all fields are validated 
     # It can check relationships BETWEEN fields 

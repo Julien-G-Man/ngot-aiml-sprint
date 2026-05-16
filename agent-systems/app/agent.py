@@ -1,4 +1,3 @@
-# app/agent.py
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
@@ -31,7 +30,6 @@ class AgentRunner:
     def invoke(self, input_dict):
         # support {'input': 'text'} for backwards compatibility
         user_text = input_dict.get('input') if isinstance(input_dict, dict) else str(input_dict)
-        # build messages including memory
         mem_vars = self.memory.load_memory_variables({})
         chat = mem_vars.get('chat_history')
         messages = []
@@ -61,7 +59,6 @@ def build_satellite_agent(verbose: bool = False):
     ]
     llm = ChatOpenAI(model='gpt-4o-mini', temperature=0, api_key=os.getenv('OPENAI_API_KEY'))
 
-    # Memory buffer
     memory = ConversationBufferWindowMemory(k=6, memory_key='chat_history', return_messages=True)
 
     # Create agent using a system prompt; avoid using deprecated hub.pull
@@ -69,7 +66,6 @@ def build_satellite_agent(verbose: bool = False):
 
     return AgentRunner(agent, memory, verbose=verbose)
 
-# Test from command line
 if __name__ == '__main__':
     executor = build_satellite_agent(verbose=True)
     result = executor.invoke({'input': 'Generate a complete intelligence report on the James Webb Space Telescope.'})

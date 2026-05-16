@@ -34,7 +34,6 @@ class MedicalRAGEngine:
     def load(self) -> bool:
         """Load the Pinecone index and set up LlamaIndex. Called once at startup."""
         try:
-            # Configure LlamaIndex global settings
             Settings.embed_model = OpenAIEmbedding(
                 model='text-embedding-3-small',
                 api_key=os.getenv('OPENAI_API_KEY'),
@@ -45,11 +44,9 @@ class MedicalRAGEngine:
                 temperature=0.1,
             )
 
-            # Connect to Pinecone
             pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
             pinecone_index = pc.Index(os.getenv('PINECONE_INDEX_NAME', 'medical-literature'))
 
-            # Get vector count
             stats = pinecone_index.describe_index_stats()
             self._vector_count = stats.total_vector_count
 
@@ -57,7 +54,6 @@ class MedicalRAGEngine:
                 logger.warning('Pinecone index is empty — run scripts/ingest.py first')
                 return False
 
-            # Wrap Pinecone in LlamaIndex vector store
             vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
             self._index = VectorStoreIndex.from_vector_store(vector_store)
 
@@ -98,7 +94,6 @@ class MedicalRAGEngine:
 
         start_time = time.time()
 
-        # Update LLM temperature for this query
         Settings.llm = LlamaOpenAI(
             model='gpt-4o-mini',
             api_key=os.getenv('OPENAI_API_KEY'),
@@ -123,7 +118,6 @@ relevant."""
 
         latency_ms = (time.time() - start_time) * 1000
 
-        # Build source documents list
         sources = []
         for node in source_nodes:
             sources.append(SourceDocument(

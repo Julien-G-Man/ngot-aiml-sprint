@@ -48,7 +48,6 @@ llm   = ChatOpenAI(model='gpt-4o-mini', temperature=0,
 api_key=os.getenv('OPENAI_API_KEY'))
 agent = create_agent(llm, tools, debug=True)
 
-# Test with a complex multi-step query using structured messages
 user_query = (
     "Search for the latest news about the James Webb Space Telescope observations,"
     " then compile a brief intelligence report about its most recent scientific findings."

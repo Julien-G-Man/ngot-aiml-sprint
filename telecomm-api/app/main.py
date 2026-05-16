@@ -1,4 +1,3 @@
-# app/main.py
 import time, logging
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware

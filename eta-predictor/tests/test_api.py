@@ -1,6 +1,5 @@
-# tests/test_api.py 
-# Integration tests for the FastAPI endpoints 
-  
+# Integration tests for the FastAPI endpoints
+
 import pytest 
 from fastapi.testclient import TestClient 
 from unittest.mock import patch, MagicMock 
@@ -8,7 +7,6 @@ import numpy as np
 from app.main import app 
   
   
-# TestClient lets us test the API without starting a real server 
 client = TestClient(app) 
   
 # A valid request payload we'll reuse across tests 
@@ -46,9 +44,8 @@ class TestHealthEndpoint:
   
 class TestPredictEndpoint: 
   
-    @patch('app.main.predictor') 
-    def test_predict_returns_200_when_model_loaded(self, mock_predictor): 
-        # Setup the mock predictor 
+    @patch('app.main.predictor')
+    def test_predict_returns_200_when_model_loaded(self, mock_predictor):
         mock_predictor.is_loaded = True 
         mock_predictor.version = 'test-v1' 
         mock_predictor.predict.return_value = (185.0, 148.0, 222.0) 

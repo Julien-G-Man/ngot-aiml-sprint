@@ -13,7 +13,6 @@ def get_current_year() -> int:
 llm = ChatOpenAI(model='gpt-4o-mini', api_key="dummy")
 agent = create_agent(llm, [get_current_year])
 
-# Check the input schema
 print("Input schema:", agent.input_schema)
 print("Input schema fields:", agent.input_schema.model_fields if hasattr(agent.input_schema, "model_fields") else "N/A")
 

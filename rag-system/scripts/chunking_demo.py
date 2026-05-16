@@ -34,13 +34,12 @@ Severe malaria requires intravenous Artesunate as first-line therapy.
 P. vivax and
 """
 
-# Create a LlamaIndex Document from the text
 doc = Document(text=sample_text)
 
 # ── Strategy 1: Small chunks (aggressive splitting) ────────────── 
 small_splitter = SentenceSplitter(
     chunk_size=100,    # Max tokens per chunk
-    chunk_overlap=20   # Overlap between consecutive chunks 
+    chunk_overlap=20
 )
 
 small_chunks = small_splitter.get_nodes_from_documents([doc])

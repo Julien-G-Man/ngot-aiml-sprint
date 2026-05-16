@@ -1,8 +1,6 @@
-# scripts/bnb_config_demo.py
 from transformers import BitsAndBytesConfig
 import torch
 
-# BitsAndBytesConfig controls how the base model is loaded
 bnb_config = BitsAndBytesConfig(
     # ── Load in 4-bit ─────────────────────────────────────────
     load_in_4bit=True,

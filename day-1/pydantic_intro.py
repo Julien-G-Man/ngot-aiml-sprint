@@ -2,8 +2,6 @@ from pydantic import BaseModel, Field
 
 class ETARequest(BaseModel):
     origin_lat: float = Field(..., ge=-90, le=90)
-    
-# pydantic validates automatically
 
 """
 1. Basic class

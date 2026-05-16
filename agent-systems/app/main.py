@@ -1,4 +1,3 @@
-
 import time, logging
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -37,7 +36,6 @@ async def satellite_report(req: SatelliteReportRequest):
             query += ' Skip the news search, focus on technical data only.'
         result = _agent.invoke({'input': query})
         messages = result.get('messages', [])
-        # Count tool invocations by checking for a tool_call_id attribute on tool messages
         steps_taken = 0
         for m in messages:
             try:

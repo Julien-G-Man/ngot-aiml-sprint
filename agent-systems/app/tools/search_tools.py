@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Main Tavily search tool
 web_search = TavilySearchResults(
     max_results=4,
     api_key=os.getenv('TAVILY_API_KEY'),

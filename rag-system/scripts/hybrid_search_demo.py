@@ -26,8 +26,7 @@ KNOWLEDGE_BASE = [
 ]
 
 
-# ── BM25 Setup ──────────────────────────────────────────────────── 
-# BM25 needs tokenised text (list of words per document) 
+# ── BM25 Setup ──────────────────────────────────────────────────────
 tokenised_corpus = [doc['text'].lower().split() for doc in KNOWLEDGE_BASE] 
 bm25 = BM25Okapi(tokenised_corpus) 
   
